@@ -10,6 +10,7 @@ def main():
     # Create an array
     array = np.array([-2,1,-5, 10])
     print(array, type(array))
+    array.
     
     # array don't have commas in print [1 2] - CSV files
     # list has commas [1,2]

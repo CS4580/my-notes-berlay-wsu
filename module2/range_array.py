@@ -20,7 +20,7 @@ def main():
     array = np.arange(-8, 8, 2)
     print(array)
     
-    #Genarate an array with values from 0 to 5 with increment of 0.1
+    #Generate an array with values from 0 to 5 with increment of 0.1
     array = np.arange(0, 5, 0.1)
     print(array)
     
