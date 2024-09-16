@@ -3,6 +3,8 @@
 """
 import numpy as np
 from urllib.request import urlretrieve
+import zipfile
+import os
 
 SERVER_URL = 'http://icarus.cs.weber.edu/~hvalle/cs4580/data/'
 def download_file(url, file_name):
@@ -15,9 +17,15 @@ def download_file(url, file_name):
     
     
 
-def unzip_file(file_name):
+def extract_zip_file(zip_path):
     # TODO: Unzip file
-    pass
+    print(zip_path)
+    extract_path = os.getcwd()
+    with zipfile.ZipExtFile(zip_path, 'r') as zip_ref:
+        zip_ref.extractall(extract_path)
+        
+        
+    
 
 def main():
     """_summary_
