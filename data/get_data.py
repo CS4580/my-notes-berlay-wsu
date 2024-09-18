@@ -8,6 +8,12 @@ import zipfile
 import os, sys
 import shutil
 
+def get_kaggle_data(url):
+    '''
+    Create a function to download data from kaggle directly by passing the dataset name
+    '''
+    pass
+
 SERVER_URL = 'http://icarus.cs.weber.edu/~hvalle/cs4580/data/'
 def download_file(url):
     ''' Down load a ZIP file from  a URL and save it to local folder.
@@ -74,5 +80,8 @@ def main():
     data01 = f'{SERVER_URL}/{data_file}'
     download_file(data01)
 
+
+    # TODO: Set input user options to extract files
+    # from different sources: -url, -kaggle
 if __name__ == '__main__':
     main()
