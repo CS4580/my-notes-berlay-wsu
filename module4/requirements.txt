@@ -1,6 +1,6 @@
+conda
+numpy
 pandas
 ipykernel
 matplotlib
-numpy
 scikit-learn
-conda=24.9.1
