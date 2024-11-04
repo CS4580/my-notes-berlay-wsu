@@ -1,5 +1,6 @@
 # Module 7: Metrics and model development
 
+Book chapter 6
 
 ##  Metrics
 
