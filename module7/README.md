@@ -69,7 +69,9 @@ This is the most common form of edit-based metric, which generally quantifies to
 
     It is used to determine the difference between two sequences (strings)
     It is the distance between two words (minimum number of digits edits)
-        insertions, deletions, or substitutions $$ D(i, j) = \begin{cases} j & \text{if } i = 0 \ i & \text{if } j = 0 \ D(i-1, j-1) & \text{if } s[i] = t[j] \ 1 + \min {D(i-1, j), D(i, j-1), D(i-1, j-1)} & \text{if } s[i] \neq t[j] \end{cases} $$
+        insertions, deletions, or substitutions 
+        
+$$ D(i, j) = \begin{cases} j & \text{if } i = 0 \ i & \text{if } j = 0 \ D(i-1, j-1) & \text{if } s[i] = t[j] \ 1 + \min {D(i-1, j), D(i, j-1), D(i-1, j-1)} & \text{if } s[i] \neq t[j] \end{cases} $$
 
 For example:
 
@@ -86,6 +88,20 @@ Find the Levenshteain Distance
 
 Result is 3 edits, so the distances is $ = 3$
 
+```python
 # see
 def knn_levenshtein_title()
+```
 
+### KNN Cosine Similarity Distance
+It is used to measure the cosine of the angle between two vectors in a multi-dimensionality space. This is commonly used in text analysis to measure similarities between documents.
+
+$$
+\text{Cosine Similarity} = \cos(\theta)\\
+= \frac{A \cdot B}{|A| |B|}
+= \frac{\sum_{i=1}^{n} A_i B_i} { \sqrt{\sum_{i=1}^{n} A_i^2} \cdot \sqrt{\sum_{i=1}^{n} B_i^2}}
+$$
+
+where
+- $ A \cdot B$ is the dot product of vectors $A$ and $B$
+- $|A|$ and $|B|$ are magnitude (or Euclidean norms) of vectors $A$ and $B$
