@@ -105,3 +105,58 @@ $$
 where
 - $ A \cdot B$ is the dot product of vectors $A$ and $B$
 - $|A|$ and $|B|$ are magnitude (or Euclidean norms) of vectors $A$ and $B$
+
+### KNN Combining Metrics and Filtering Conditions
+
+Two main concerns with `filtering`:
+- Make too complicated (hard SQL queries)
+- Too strick (end up with no results)
+    - Adding filters gradually
+
+Combine `metrics` to generate `one` results:
+- Weight each metric
+    - Should metric contribute equally? (50/50,80/20)
+- Normalization of the combined metric
+    - Make sure they have the same range
+
+For our example we will use:
+- `Cosine`: use 20% of the `plot`
+- `Weighted Jaccard`: use 80% of `genre`
+
+```python
+# See cosine_and_weighted_jaccard()
+```
+
+### Prediction Metrics
+A `prediction` is a simple guess about what is going to transpire. One prediction is `yes` or `no`.
+
+How do we measure `accuracy` of the prediction?
+
+```python
+accuracy_metric.py
+```
+### Confusion Matrix
+It is performed to measure how well you classification model is. The model could be binary or multi-class. Each entry in confusion matrix represents specific combination of predicted vs actual classes.
+
+For binary classification, you have `four` parts:
+- `True positive (TP)`: Correctly predicted positive observations
+- `True negatives (TN)`: Correctly predicted negative observations
+- `False positives (FP)`: Incorrectly predicted positive, `Type 1 error`
+- `False negatives (FN)`: Incorrectly predicted negatives, `Type 2 error`
+
+The structure of the matrix is as follows:
+|       |Predicted Positives| Predicted Negatives|
+|-------|-------------------|--------------------|
+|Actual positive| True Positive (TP)|False Negative (FN)|
+|Actual Negative|
+
+Key metrics:
+- `Accuracy` = $\frac{TP + TN}{TP+ TN + FP + FN}$
+- `Precision` = $\frac{{TP}}{{TP+FP}}$ (useful for imbalanced classes)
+- `Recall` (or Sensitivity) = $\frac{{TP}}{{TP+FN}}$
+- `F1 Score` = $ 2 \times \frac{{Precision \times Recall}}{{Precision+Recall}}$ (harmonic mean of Precision and recall)
+
+```python
+# see
+confusion_matrix.py
+```
