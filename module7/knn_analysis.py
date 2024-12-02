@@ -108,7 +108,7 @@ def cosine_similarity_function(base_case_plot, comparator_plot):
 
 
 def cosine_and_weighted_jaccard(df: pd.DataFrame, plots: str, comparator_movie: pd.core.series.Series,):
-    # Perform the cosine similarity and weighted Jaccard metrics:
+    # Perform the cosine similiarty and weighted Jaccard metrics:
     cs_result = cosine_similarity_function(plots, comparator_movie["plot"])
     weighted_dictionary = _get_weighted_jaccard_similarity_dict(df)
     wjs_result = weighted_jaccard_similarity(
@@ -282,7 +282,7 @@ def main():
     print(f'\nTask 8: KNN Analysis with Cosine Similarity')
     knn_analysis_driver(data, base_case, comparison_type='plot',
                         metric_func=cosine_similarity_function, sorted_value='cosine_similarity')
-    # # Task 9: KNN Analysis with Cosine and Weighted Jaccard
+    # Task 9: KNN Analysis with Cosine and Weighted Jaccard
     print(f'\nTask 9: KNN Analysis with Cosine and Weighted Jaccard')
     # Add filters
     data = data[data['year'] >= BASE_YEAR]  # filter by year 1985 and above
